@@ -16,6 +16,9 @@
     <script type="text/javascript">
         // get query params
         var urlParams = new URLSearchParams(location.search);
+
+        //TBD: if urlParams.get('resumePath') doesnt exist, then fail immediately 
+
         var pingFederateHost = "https://wdc-oauth-pingfederate-engine.ping-devops.com";
 
 
@@ -54,10 +57,14 @@
             console.log(`Event: login`)
             clearListeners();
             //  get REF from PING
-            var credentials = btoa('tompoc1:2FederateM0re');
+   
             const requestOptions = {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Basic ${credentials}`},
+                headers: { 
+                    'Content-Type': 'application/json', 
+                    'Authorization': `Basic dG9tcG9jMToyRmVkZXJhdGVNMHJl`,
+                    'TomPOC1OneID': 'true'
+                },
                 body: JSON.stringify({ subject: d.token.swid })
             };
 
