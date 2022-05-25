@@ -67,7 +67,7 @@
                 body: JSON.stringify({ subject: d.token.swid })
             };
 
-            var ref = await fetch(`${pingFederateHost}/ext/ref/dropoff?TomPOC1OneID=true`, requestOptions)
+            var ref = await fetch(`${pingFederateHost}/ext/ref/dropoff`, requestOptions)
                 .then(response => response.json())
 
             // redirect back to PING
