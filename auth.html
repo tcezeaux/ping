@@ -19,8 +19,7 @@
 
                 // site hosted using HTTPS
                 // Responder page is required.
-                ,
-            responderPage: 'didresponder.html'
+                , responderPage: `${window.location.href.match(/(.*)\//g)}didresponder.html`
 
                 // CSS File to override default lightbox styles (HTTPS Only)
                 // CSS file must be on a publicly accessible https URL
