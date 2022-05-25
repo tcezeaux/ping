@@ -62,13 +62,12 @@
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json', 
-                    'Authorization': `Basic dG9tcG9jMToyRmVkZXJhdGVNMHJl`,
-                    'TomPOC1OneID': 'true'
+                    'Authorization': `Basic dG9tcG9jMToyRmVkZXJhdGVNMHJl`
                 },
                 body: JSON.stringify({ subject: d.token.swid })
             };
 
-            var ref = await fetch(`${pingFederateHost}/ext/ref/dropoff`, requestOptions)
+            var ref = await fetch(`${pingFederateHost}/ext/ref/dropoff?TomPOC1OneID=true`, requestOptions)
                 .then(response => response.json())
 
             // redirect back to PING
